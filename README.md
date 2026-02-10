@@ -10,6 +10,7 @@ Zero Performance Overhead: Since it uses C preprocessor macros, your code runs j
 # Example Code
 Save this as sali.c:
 
+```python
 #include "schwiiz.h"
 
 zahl huerestolz() {
@@ -26,7 +27,7 @@ zahl huerestolz() {
 
     gits_zrugg 0;
 }
-
+```
 
 Installation & Usage
 Download the schwiiz.h header file.Include it at the top of your .c files.Compile as usual:Bashgcc sali.c -o sali
