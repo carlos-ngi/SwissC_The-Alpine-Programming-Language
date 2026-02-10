@@ -1,5 +1,5 @@
-#ifndef SCHWIIZ_H
-#define SCHWIIZ_H
+#ifndef SCHWITZ_H
+#define SCHWITZ_H
 
 #include <stdio.h>
 #include <stdbool.h>
