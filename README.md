@@ -2,7 +2,7 @@
 
 **SwissC** is a satirical C-language dialect that brings the charm of the Swiss Alps directly into your terminal. By replacing standard C keywords with **Swiss German (Schwiizerdütsch)**, it transforms rigid programming into a cozy, local experience.
 
-Whether you're from Zurich, Bern, or the Graubünden, SwissC makes your code sound like a conversation over a fondue pot.
+Whether you're from Zurich, Bern, or Graubünden, SwissC makes your code sound like a conversation over a fondue pot.
 
 ---
 
@@ -38,11 +38,9 @@ zahl hauptteil() {
 ```
 # Installation & Usage
 Download the schwiiz.h header file.
-
 Include it at the top of your .c files.
 
 Compile as usual:
-
 Bash
 gcc sali.c -o sali
 ./sali
