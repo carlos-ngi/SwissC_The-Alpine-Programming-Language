@@ -33,7 +33,7 @@
 #define standard            default
 #define solangs             while
 #define mach                do
-#define für_jedes           for
+#define für                 for
 #define brich_ab            break
 #define wiiter_gahts        continue
 
