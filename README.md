@@ -19,7 +19,7 @@ Whether you're from Zurich, Bern, or Graubünden, SwissC makes your code sound l
 Save this as `sali.c`:
 
 ```c
-#include "schwiiz.h"
+#include "swissC.H"
 
 zahl hauptteil() {
     zahl miniZahl = 1;
@@ -37,7 +37,7 @@ zahl hauptteil() {
 }
 ```
 # Installation & Usage
-Download the schwiiz.h header file.
+Download the swissC.H header file.
 Include it at the top of your .c files.
 
 Compile as usual:
