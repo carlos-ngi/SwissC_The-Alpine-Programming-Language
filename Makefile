@@ -1,16 +1,28 @@
 # Makefile für SwissC
-CC=gcc
-CFLAGS=-Wall
+CC     = gcc
+CFLAGS = -std=c11 -Wall -Wextra -I.
 
-# Das Ziel (dein fertiges Programm)
-all: sali rechner
+# Die fertige Programm
+all: sali rechner ohni_include
 
-sali: sali.c swissC.H
-  $(CC) $(CFLAGS) -o sali sali.c
+sali: beispiele/sali.c swissC.h
+	$(CC) $(CFLAGS) -o $@ $<
 
-rechner: rechner.c swissC.H
-  $(CC) $(CFLAGS) -o rechner rechner.c
+rechner: beispiele/rechner.c swissC.h
+	$(CC) $(CFLAGS) -o $@ $<
 
-# Aufräumen: löscht die ausführbaren Dateien
+# Das Biispiel het kei #include, drum lauft das übers swissc-Skript
+ohni_include: beispiele/ohni_include.c swissC.h swissc
+	CC=$(CC) ./swissc -Wall -Wextra -o $@ $<
+
+# Churz teste ob alles lauft
+test: all
+	./sali
+	echo "6 * 7" | ./rechner
+	./ohni_include
+
+# Ufruume: löscht die fertige Programm
 clean:
-  rm -f sali rechner
+	rm -f sali rechner ohni_include
+
+.PHONY: all test clean
