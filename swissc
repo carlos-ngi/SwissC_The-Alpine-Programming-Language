@@ -1,0 +1,20 @@
+#!/bin/sh
+# swissc - kompiliert SwissC ohni dass mer swissC.h selber mues includiere
+#
+# Bruuch: ./swissc programm.c -o programm
+# Alli Optione gönd eifach wiiter an gcc (oder $CC).
+
+DIR=$(cd "$(dirname "$0")" && pwd)
+HEADER="$DIR/swissC.h"
+
+if [ ! -f "$HEADER" ]; then
+    echo "swissc: Hoppla, swissC.h isch nöd näbed em Skript ($DIR)." >&2
+    exit 1
+fi
+
+if [ $# -eq 0 ]; then
+    echo "Bruuch: swissc programm.c -o programm" >&2
+    exit 1
+fi
+
+exec "${CC:-gcc}" -std=c11 -include "$HEADER" "$@"
