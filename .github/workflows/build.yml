@@ -1,0 +1,17 @@
+name: Build
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        cc: [gcc, clang]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Biispiel kompiliere und teste (${{ matrix.cc }})
+        run: make CC=${{ matrix.cc }} CFLAGS="-std=c11 -Wall -Wextra -Werror -I." test
